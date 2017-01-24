@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <!--  <base href="/">-->
+    <title ng-bind="Title"></title>
+    <link href="Assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Assets/css/toaster.css" rel="stylesheet"/>
+    <link href="Assets/css/Site.css" rel="stylesheet"/>
+    <link href="Assets/css/ui-grid.min.css" rel="stylesheet"/>
+    <link href="Assets/css/ngDialog.css" rel="stylesheet"/>
+    <link href="Assets/css/ngDialog-theme-default.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="shortcut icon" href="Assets/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" style="color:white">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Application Name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" role="navigation">
+                <li><a ui-sref="home">Home</a> </li>
+                <li><a ui-sref="about">About</a> </li>
+                <li><a ui-sref="contact">Contact</a> </li>
+                <li><a ui-sref="employee">Employee</a> </li>
+                <li><a ui-sref="department">Departments</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content" >
+    <div id="viewContainer" ui-view>
+
+    </div>
+    <div>
+        <toaster-container toaster-options="{'time-out': 3000,'close-button':true,'position-class':'toast-bottom-right'}"></toaster-container>
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</div>
+
+<!--predefined scripts-->
+
+<script src="Vendors/angular/angular.js"></script>
+<!--<script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>-->
+<script src="Assets/js/jquery-1.10.2.min.js"></script>
+<script src="Assets/js/bootstrap.min.js"></script>
+<script src="Vendors/angular/angular-animate.min.js"></script>
+<script src="Vendors/angular/ngDialog.min.js"></script>
+    <script src="Vendors/angular/toaster.js"></script>
+    <script src="Vendors/angular/angular-route.min.js"></script>
+<script src="Vendors/angular/angular-resource.min.js"></script>
+<script src="Vendors/angular/angular-filter.min.js"></script>
+<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="Vendors/angular/ui-grid.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<script src="http://ui-grid.info/release/ui-grid.js"></script>
+
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.js"></script>-->
+
+<!--predefined scripts-->
+
+<!--user defined scripts-->
+
+<script src="App/app.js"></script>
+<script src="App/controllers/HomeController.js" type="text/javascript"></script>
+<script src="App/controllers/AboutController.js" type="text/javascript"></script>
+<script src="App/controllers/EmployeeController.js" type="text/javascript"></script>
+<script src="App/controllers/ContactController.js" type="text/javascript"></script>
+<script src="App/controllers/DepartmentController.js" type="text/javascript"></script>
+<script src="App/services/EmployeeService.js" type="text/javascript"></script>
+<script src="App/services/ToasterService.js" type="text/javascript"></script>
+<script src="App/services/DepartmentService.js" type="text/javascript"></script>
+
+<!--user defined scripts-->
+</body>
+</html>
+

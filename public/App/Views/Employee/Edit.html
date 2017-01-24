@@ -1,0 +1,61 @@
+<div class="row">
+    <form name="employeeForm" role="form" class="form-horizontal" novalidate>
+
+                <fieldset>
+                    <legend>{{formTitle}}</legend>
+                   <div class="row">
+                       <div class="col-md-12">
+                           <div class="form-group"  ng-show="isEdit">
+                               <label for="_id" class="col-md-2 control-label">ID</label>
+                               <div class="col-md-1">
+                                   <input type="text" value="{{employee._id}}" class="form-control" name="_id" disabled>
+                               </div>
+                           </div>
+
+                           <div class="form-group" ng-class="{'has-error':employeeForm.FirstName.$invalid}" >
+                               <label for="FirstName" class="col-md-2 control-label">First Name</label>
+                               <div class="col-md-6">
+                                   <input type="text" ng-model="employee.FirstName" placeholder="FirstName..." class="form-control" name="FirstName" ng-required="true">
+                               </div>
+                               <div class="col-md-4">
+                                   <span ng-show="employeeForm.FirstName.$error.required" class="help-block">Required</span>
+                               </div>
+                           </div>
+
+                           <div class="form-group"  ng-class="{'has-error':employeeForm.LastName.$invalid}">
+                               <label for="LastName" class="col-md-2 control-label">Last Name</label>
+                               <div class="col-md-6">
+                                   <input type="text" ng-model="employee.LastName" placeholder="LastName..." class="form-control" ng-required="true" name="LastName">
+                               </div>
+                               <div class="col-md-4">
+                                   <span ng-show="employeeForm.LastName.$error.required" class="help-block">Required</span>
+                               </div>
+                           </div>
+
+                           <div class="form-group" ng-class="{'has-error':employeeForm.Department.$invalid}" >
+                               <label for="Department" class="col-md-2 control-label">Department</label>
+                               <div class="col-md-6">
+                                   {{employee.Department}}
+                                   <!--<select ng-model="employee.Department"  name="Department" required ng-options="Department._id as Department.Name for Department in departments" class="form-control">-->
+                                   <select ng-model="employee.Department"  name="Department" required ng-options="Department.Name for Department in departments track by Department._id" class="form-control">
+                                       <option value="">select--</option>
+                                   </select>
+                                   <!--<input type="text" ng-model="employee.FirstName" placeholder="FirstName..." class="form-control" name="FirstName" ng-required="true">-->
+                               </div>
+                               <div class="col-md-4">
+                                   <span ng-show="employeeForm.Department.$error.required" class="help-block">Required</span>
+                               </div>
+                           </div>
+
+                           <div class="form-group">
+                               <div class="col-md-offset-2 col-md-10">
+                                   <button type="submit" ng-disabled="employeeForm.$invalid" class="btn btn-primary" ng-click="save()">{{formTitle}}</button>
+                                   <button type="button" class="btn" ng-click="closeThisDialog()">Cancel</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                </fieldset>
+
+    </form>
+</div>

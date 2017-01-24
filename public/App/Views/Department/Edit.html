@@ -1,0 +1,36 @@
+<div class="row">
+    <form name="departmentForm" role="form" class="form-horizontal" novalidate>
+
+        <fieldset>
+            <legend>{{formTitle}}</legend>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group"  ng-show="isEdit">
+                        <label for="_id" class="col-md-2 control-label">ID</label>
+                        <div class="col-md-1">
+                            <input type="text" value="{{department._id}}" class="form-control" name="_id" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group"  ng-class="{'has-error':departmentForm.Name.$invalid}">
+                        <label for="Name" class="col-md-2 control-label">Last Name</label>
+                        <div class="col-md-6">
+                            <input type="text" ng-model="department.Name" placeholder="Name..." class="form-control" ng-required="true" name="Name">
+                        </div>
+                        <div class="col-md-4">
+                            <span ng-show="departmentForm.Name.$error.required" class="help-block">Required</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" ng-disabled="employeeForm.$invalid" class="btn btn-primary" ng-click="save()">{{formTitle}}</button>
+                            <button type="button" class="btn" ng-click="closeThisDialog()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+</div>
